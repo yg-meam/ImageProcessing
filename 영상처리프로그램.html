@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="rawCss.css" />
+    <script type="text/javascript" src="rawJavascript.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.outer-menu-item').hover(function () {
+                $(this).find('.inner-menu').show();
+            }, function () {
+                $(this).find('.inner-menu').hide();
+            });
+        });
+    </script>
+</head>
+
+<body onload="init()">
+    <div id="page-wrapper">
+        <header id="main-header">
+            <hgroup>
+                <h1 class="master-title">Hyunjin's Mini_Project</h1>
+            </hgroup>
+        </header>
+        <nav id="main-navigation">
+            <div class="pull-left">
+                <ul class="outer-menu">
+                    <li class="outer-menu-item">
+                        <span class="menu-title">화소점 처리</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="100">동일영상</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="101">밝게</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="102">어둡게</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="103">반전</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="104">흑백</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="105">흑백(평균값)</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="106">흑백(중위수)</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="outer-menu-item">
+                        <span class="menu-title">기하학 처리</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="200">축소</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="201">확대</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="202">확대(백워딩)</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="203">회전</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="205">회전(중앙,
+                                    백워딩)</a></li>
+                        </ul>
+                    </li>
+                    <li class="outer-menu-item">
+                        <span class="menu-title">화소영역 처리</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="300">엠보싱</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="301">블러링</a>
+                            </li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="302">윤곽선 추출</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="outer-menu-item">
+                        <span class="menu-title">히스토그램</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="400">히스토그램
+                                    스트레칭</a></li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="401">엔드-인
+                                    탐색</a></li>
+                            <li class="inner-menu-item"><a href="#" onclick="selectAlgo(this)" value="402">평활화</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="content">
+            <section id="main-section">
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">자바스크립트(Javascript)를 이용한 영상처리</h1>
+                        <p class="article-body">HTML 5 + CSS + JavaScript</p>
+                    </div>
+
+                    <form>
+                        <input type="file" id="inFile" onchange="openImage()" /><br><br>
+                        <canvas id="inCanvas" height="256" width="256" style="background-color : #eeee"></canvas>
+                        <canvas id="outCanvas" height="256" width="256" style="background-color : #eeee"></canvas>
+                    </form>
+                </article>
+            </section>
+
+            <aside id="main-aside">
+                <div class="aside-list">
+                    <h3>화소점 처리</h3>
+                    <ul>
+                        <li><a href="#" onclick="selectAlgo(this)" value="100">동일하게</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="101">밝게</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="102">둡게</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="103">반전</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="104">흑백</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="105">흑백(평균값)</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="106">흑백(중위수)</a></li>
+                    </ul>
+                </div>
+                <div class="aside-list">
+                    <h3>기하학 처리</h3>
+                    <ul>
+                        <li><a href="#" onclick="selectAlgo(this)" value="200">축소</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="201">확대</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="202">확대(백워딩)</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="203">회전</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="205">회전(중앙, 백워딩)</a></li>
+                    </ul>
+                </div>
+                <div class="aside-list">
+                    <h3>화소영역 처리</h3>
+                    <ul>
+                        <li><a href="#" onclick="selectAlgo(this)" value="300">엠보싱</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="301">블러링</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="302">윤곽선 추출</a></li>
+                    </ul>
+                </div>
+                <div class="aside-list">
+                    <h3>히스토그램</h3>
+                    <ul>
+                        <li><a href="#" onclick="selectAlgo(this)" value="400">히스토그램 스트레칭</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="401">엔드-인 탐색</a></li>
+                        <li><a href="#" onclick="selectAlgo(this)" value="402">평활화</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+        <footer id="main-footer">
+            <a href="./영상처리프로그램.html">자바스크립트(Javascript)를 이용한 영상처리</a>
+            <a style="float: right;" href="/Javascript 기반의 영상처리 프로그래밍.pptx">※PPT 다운로드</a>
+        </footer>
+    </div>
+</body>
+
+</html>

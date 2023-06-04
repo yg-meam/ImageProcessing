@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+body {
+    width: 960px;
+    margin: 0 auto;
+    background: #eeee;
+}
+
+#page-wrapper {
+    background: white;
+    margin: 40px 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+}
+
+#main-header {
+    padding: 40px 50px;
+}
+
+.master-title {
+    font-size: 30px;
+    color: #181818;
+}
+
+.master-description {
+    font-size: 15px;
+    font-weight: 500;
+    color: #444444;
+}
+
+#main-navigation {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    height: 40px;
+}
+
+.outer-menu-item {
+    float: left;
+    position: relative;
+}
+
+.outer-menu-item:hover {
+    background: gray;
+    color: white;
+}
+
+.menu-title {
+    display: block;
+    line-height: 30px;
+    text-align: center;
+    padding: 5px 20px;
+    color: black;
+    font-weight: 600;
+}
+
+.inner-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 6px slategray;
+    z-index: 1000;
+    text-align: center;
+}
+
+.inner-menu-item>a {
+    display: block;
+    padding: 5px 10px;
+    color: black;
+}
+
+.inner-menu-item>a:hover {
+    background: gainsboro;
+    color: gray;
+}
+
+#content {
+    overflow: hidden;
+}
+
+#main-section {
+    float: left;
+    width: 710px;
+}
+
+#main-aside {
+    float: right;
+    width: 200px;
+}
+
+.aside-list {
+    padding: 10px 0 30px 0;
+}
+
+.aside-list>h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+    font-weight: 900;
+}
+
+.aside-list li a {
+    margin-left: 8px;
+    font-size: 13px;
+    color: rgb(90, 90, 90);
+}
+
+article {
+    padding: 0 10px 20px 10px;
+}
+
+.article-header {
+    padding: 20px 0;
+}
+
+.article-title {
+    font-size: 25px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.article-body {
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    color: gray;
+}
+
+#main-footer {
+    padding: 10px 0 10px 0;
+    border-top: 1px solid black;
+}
