@@ -1,9 +1,9 @@
-# ImageProcessing# 자바스크립트를 통한 사진 처리 기능  
+# ImageProcess# 자바스크립트를 통한 사진 처리 기능  
 # 프로젝트 소개
 > 이 프로젝트는 자바스크립트의 canvas를 이용하여, 사진을 처리하는 여러 가지 기법을 다룹니다. 다양한 화소점 처리, 기하학 처리, 화소영역 처리, 그리고 히스토그램 처리 기법을 구현하여 이미지를 다양하게 가공할 수 있습니다.  
 
 # deploy 주소
-##  https://may-stack.github.io/RAWImageProcessor/
+##  
 
 # 기능  <br>
 ##  화소점 처리
